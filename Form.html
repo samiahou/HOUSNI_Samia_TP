@@ -1,0 +1,181 @@
+<head>
+
+</head>
+
+<body>
+
+<style>
+h1{
+color: black;
+text-align : center;
+text-transform: capitalize;
+font-size: 25px;
+margin-bottom : 40px;
+}
+
+h2{
+background-color: black;
+color: white;
+text-align : center;
+text-transform: capitalize
+border : 2px solid black;
+//border-radius: 10px;
+width: 450px;
+height: 25px;
+padding: 10px;
+margin-left: 30px;
+font-size: 18px;
+}
+
+form{
+border : 2px solid black;
+width : 80%;
+height : 90%;
+background-color: #d8bfd8;
+}
+
+.Q1{
+//margin-left : 9em ;
+//margin-right: 0;
+//text-align : center;
+position: relative;
+left: 50px;
+accent-color: red;
+border: 0px solid #34495E; 
+}
+
+
+.Q2{
+position: relative;
+left: 50px;
+accent-color: red;
+border: 0px solid #34495E; 
+}
+
+input{
+background-color: red;
+}
+
+.boutton{
+position: relative;
+top: 10px;
+left: 30px;
+bottom : 10px;
+}
+
+#result{
+position: relative;
+top: 20px;
+left: 30px;
+bottom : 10px;
+font-weight: bold;
+}
+
+#result2{
+position: relative;
+top: 20px;
+left: 30px;
+bottom : 10px;
+font-weight: bold;
+}
+
+
+} 
+</style>
+
+ 
+
+<form action="">
+
+<h1>QCM - Culture générale </h1> 
+
+<h2>Quel est le language qui permet d'ajouter un style?</h2>
+<div name="language">
+	<input type="radio" id="html" name="language" value="HTML" class="Q1">
+
+	<label for="html" class="Q1">HTML</label><br>
+
+	<input type="radio" id="css" name="language" value="CSS" class="Q1">
+
+	<label for="css" class="Q1">CSS</label><br>
+
+	<input type="radio" id="cobol" name="language" value="cobol" class="Q1">
+
+	<label for="cobol" class="Q1">Cobol</label>
+</div>
+
+
+<br> 
+ 
+
+<h2>Quel est le moyen de transport le plus rapide?</h2>
+
+	<input type="checkbox" id="vehicle1" name="vehicle" value="Bus" class="Q2">
+
+	<label for="Bus" class="Q2"> Bus</label><br>
+
+	<input type="checkbox" id="vehicle2" name="vehicle" value="Car" class="Q2">
+
+	<label for="Car" class="Q2"> Car</label><br>
+
+	<input type="checkbox" id="vehicle3" name="vehicle" value="Plane" class="Q2">	
+
+	<label for="Plane" class="Q2"> Plane</label><br><br>	
+
+ <button type="button" class="boutton" onclick="getRadioValue()">
+        Submit
+ </button>
+ <br>
+<div id="result"></div>
+<div id="result2"></div>
+<script>
+function getRadioValue() {
+	var val
+    var ele = document.getElementsByName('language');        
+            for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked)
+                document.getElementById("result").innerHTML
+                         = "La réponse de la première question est : "+ele[i].value;
+				val = document.querySelector('input[name = "language"]:checked').value;
+				
+				
+            }
+if(val == 'CSS'){
+var rep1 = "correcte"
+document.getElementById("result").innerHTML
+                         = "La réponse à la première question est correcte";
+
+}else
+{
+document.getElementById("result").innerHTML
+                         = "La réponse à la première question est incorrecte";
+}
+
+///--------------
+var array = []
+var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+for (var i = 0; i < checkboxes.length; i++) {
+  array.push(checkboxes[i].value)
+}
+if ( array.length === 1 && array[0] === 'Plane'){
+document.getElementById("result2").innerHTML
+                         = "La réponse à la deuxième question est correcte";
+}else{
+document.getElementById("result2").innerHTML
+                         = "La réponse à la deuxième question est incorrecte";
+}
+}
+
+
+</script>
+
+ 
+</form>
+
+ 
+
+ 
+
+</frameset>
+
+</body>
